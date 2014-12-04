@@ -9,5 +9,7 @@ my $searcher = Get::Sit->new(
 my $search_word = 'linux';
 my $result = $searcher->search_all($search_word);
 ok(!$result->{errors});
+$result = $searcher->search_query_string($search_word);
+ok(!$result->{error});
 
 done_testing;

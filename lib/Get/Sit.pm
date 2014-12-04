@@ -15,6 +15,12 @@ sub search_all {
   return $self->es->search(body => $cerca);
 }
 
+sub search_query_string {
+  my ($self, $search) = @_;
+  # TODO: Is this $search safe and legit?
+  return $self->es->search(uri_param => { q => $search });
+}
+
 
 1;
 
